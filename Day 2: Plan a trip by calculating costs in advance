@@ -24,8 +24,8 @@ def rental_car_cost(days): #cost of renting a car to travel in the city. You can
   return rent
   
  #total trip cost 
-def trip_cost(city, days):
- return rental_car_cost(days) + hotel_cost(days - 1) + plane_ride_cost(city)
+def trip_cost(city, days, spending_money):
+ return rental_car_cost(days) + hotel_cost(days - 1) + plane_ride_cost(city) + spending_money
   
 # we changed the argument of hotel_costs() from nights to days - 1 since we want trip_cost() to only depend on two parameters
 
@@ -34,4 +34,4 @@ def trip_cost(city, days):
 print rental_car_cost(5) #180
 print plane_ride_cost("Pittsburgh") #222
 print hotel_cost(16) #2240
-print trip_cost("Pittsburgh", 4) #782
+print trip_cost("Pittsburgh", 4, 100) #882
